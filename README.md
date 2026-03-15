@@ -1,4 +1,4 @@
-# svelte-webmcp
+# Svelte WebMCP
 
 WebMCP integration for Svelte 5 and SvelteKit — tool registration, Zod validation, and declarative forms for AI agents.
 
