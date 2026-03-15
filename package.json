@@ -1,0 +1,81 @@
+{
+  "name": "svelte-webmcp",
+  "version": "0.1.0",
+  "description": "WebMCP integration for Svelte 5 and SvelteKit — tool registration, Zod validation, and declarative forms for AI agents",
+  "license": "MIT",
+  "type": "module",
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./actions": {
+      "types": "./dist/actions/index.d.ts",
+      "default": "./dist/actions/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "vite dev",
+    "build": "svelte-kit sync && svelte-package",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync || echo ''",
+    "prepack": "svelte-kit sync && svelte-package && publint",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0",
+    "zod": "^3.25.0",
+    "@mcp-b/global": "^1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@mcp-b/global": {
+      "optional": true
+    },
+    "@modelcontextprotocol/sdk": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^7.0.0",
+    "@sveltejs/kit": "^2.50.2",
+    "@sveltejs/package": "^2.5.7",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "@testing-library/svelte": "^5.0.0",
+    "jsdom": "^25.0.0",
+    "publint": "^0.3.17",
+    "svelte": "^5.51.0",
+    "svelte-check": "^4.4.2",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vitest": "^3.0.0",
+    "zod": "^3.25.0"
+  },
+  "keywords": [
+    "svelte",
+    "sveltekit",
+    "webmcp",
+    "mcp",
+    "ai",
+    "agents",
+    "web-standard",
+    "w3c",
+    "model-context-protocol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lenga-dev/svelte-webmcp"
+  }
+}
